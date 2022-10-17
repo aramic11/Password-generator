@@ -9,6 +9,7 @@ const specialCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
 let passwordLength;
 let upperCaseRule;
+let numbersRule;
 
 //Going to make my first function to determine length of password
 function calculatePasswordLength(){
@@ -40,12 +41,30 @@ function dictateUpperCase() {
     return upperCaseRule;
   }
 
+  //Creating a function to see if the User wants numbers
+  function dictateNumbers() {
+    let numbersRule = prompt("Would you like to include numbers? Please type:(Yes or No)");
+    if (numbersRule === "yes"){
+      numbersRule = true;
+      return numbersRule;
+    } else if (numbersRule === "no"){
+      numbersRule = false;
+      return numbersRule;
+    }else {
+      alert("Invalid Answer! Please type:(Yes or No)")
+      dictateNumbers();
+      }
+      return numbersRule;
+    }
+
   
 function generatePassword(){
   calculatePasswordLength();
   console.log(passwordLength);
   dictateUpperCase();
   console.log(upperCaseRule);
+  dictateNumbers();
+  console.log(numbersRule);
 }
 
 
