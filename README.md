@@ -4,3 +4,4 @@ I needed to create a password generator that would ask the user a bunch of quest
 ## Links
 Website:https://aramic11.github.io/password-generator/    Github: https://github.com/aramic11/password-generator
 ## Screenshot
+![Screen Shot 2022-10-17 at 5 36 49 PM](https://user-images.githubusercontent.com/113563367/196289541-8167e04c-f04e-4d7d-9e65-dc42d3092de1.png)
