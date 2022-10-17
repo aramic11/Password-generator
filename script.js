@@ -5,11 +5,14 @@ const generateBtn = document.querySelector("#generate");
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const numbers = "123456789";
-const specialCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+const specialCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+
+let passwordLength;
+let upperCaseRule;
 
 //Going to make my first function to determine length of password
 function calculatePasswordLength(){
-  let passwordLength;
+  //let passwordLength;
   passwordLength = prompt("Please enter the length of your password (Must be between 8 and 128 characters)");
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert("Invalid password length. Must be a numeric value between 8 and 128 characters");
@@ -20,9 +23,29 @@ function calculatePasswordLength(){
 return passwordLength;
 }
 
+
+//Creating another function to see if the user wants uppercase letters
+function dictateUpperCase() {
+  let upperCaseRule = prompt("Would you like to include uppercase letters? Please type:(Yes or No)");
+  if (upperCaseRule === "yes"){
+    upperCaseRule = true;
+    return upperCaseRule;
+  } else if (upperCaseRule === "no"){
+    upperCaseRule = false;
+    return upperCaseRule;
+  }else {
+    alert("Invalid Answer! Please type:(Yes or No)")
+    dictateUpperCase();
+    }
+    return upperCaseRule;
+  }
+
+  
 function generatePassword(){
   calculatePasswordLength();
   console.log(passwordLength);
+  dictateUpperCase();
+  console.log(upperCaseRule);
 }
 
 
