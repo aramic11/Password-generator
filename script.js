@@ -109,6 +109,7 @@ function generatePassword(){
 let password = "";
 let selections = "";
 
+//This is to identify what the user selected yes "True" to and then add the appropriate variables to the selections before generating a password
 if (lowerCaseRule){
   selections += lowerCase;
 }
@@ -122,6 +123,7 @@ if (specialsRule){
   selections += specialCharacters;
 }
 
+//This is a for loop to iterate throughout the password length which is determined at the beginning and then randomizing the selections
 for(let i = 0; i < passwordLength; i++) {
   password += selections.charAt(Math.floor(Math.random() * selections.length));
   }
